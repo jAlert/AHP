@@ -4,8 +4,31 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+<style>
+  #ahp-intro{position:fixed;inset:0;z-index:9999;background:#003CA8;display:flex;align-items:center;justify-content:center;opacity:1;transition:opacity .8s ease;pointer-events:none}
+  #ahp-intro.ahp-hide{opacity:0}
+  #ahp-intro video{width:100%;height:100%;object-fit:cover}
+  html.ahp-intro-seen #ahp-intro{display:none}
+</style>
+<script>try{if(localStorage.getItem('ahpIntroSeen')==='1')document.documentElement.className+=' ahp-intro-seen';}catch(e){}</script>
 </head>
 <body>
+<div id="ahp-intro" aria-hidden="true"><video src="assets/intro.mp4" autoplay muted playsinline preload="auto"></video></div>
+<script>
+(function(){
+  var el=document.getElementById('ahp-intro');
+  if(!el)return;
+  if(document.documentElement.classList.contains('ahp-intro-seen')){el.parentNode.removeChild(el);return;}
+  var done=false;
+  function hide(){
+    if(done)return;done=true;
+    el.classList.add('ahp-hide');
+    try{localStorage.setItem('ahpIntroSeen','1');}catch(e){}
+    setTimeout(function(){if(el&&el.parentNode)el.parentNode.removeChild(el);},900);
+  }
+  setTimeout(hide,7000);
+})();
+</script>
 <x-dc>
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
