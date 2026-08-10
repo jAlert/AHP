@@ -46,12 +46,6 @@
 </style>
 </helmet>
 
-<div style="position: fixed; bottom: 20px; right: 20px; zIndex: 200; display: flex; gap: 4px; padding: 5px; background: rgba(18,35,63,.92); borderRadius: 999px; boxShadow: 0 8px 28px rgba(18,35,63,.28); backdropFilter: blur(8px)">
-  <button onClick="{{ setDesktop }}" style="{{ btnDesktop }}">Desktop</button>
-  <button onClick="{{ setTablet }}" style="{{ btnTablet }}">Tablet</button>
-  <button onClick="{{ setMobile }}" style="{{ btnMobile }}">Mobile</button>
-</div>
-
 <div style="display: flex; justifyContent: center; paddingTop: {{ framePad }}; paddingBottom: {{ framePad }}">
 <div style="position: relative; width: 100%; maxWidth: {{ frameW }}; background: #FFFFFF; overflow: hidden; color: #12233F; boxShadow: {{ frameShadow }}; borderRadius: {{ frameRadius }}">
 
@@ -381,7 +375,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
 class Component extends DCLogic {
-  state = { device: 'desktop', menuOpen: false, openStream: 0, openDay: 0 };
+  state = { device: (typeof window !== 'undefined' && window.innerWidth < 1024) ? (window.innerWidth < 768 ? 'mobile' : 'tablet') : 'desktop', menuOpen: false, openStream: 0, openDay: 0 };
 
   componentDidMount() {
     const root = this.root || document;
@@ -402,10 +396,17 @@ class Component extends DCLogic {
     };
     window.addEventListener('scroll', this._scroll, { passive: true });
     this._scroll();
+    this._resize = () => {
+      const w = window.innerWidth;
+      const dev = w < 768 ? 'mobile' : (w < 1024 ? 'tablet' : 'desktop');
+      if (dev !== this.state.device) this.setState({ device: dev, menuOpen: false });
+    };
+    window.addEventListener('resize', this._resize, { passive: true });
+    this._resize();
   }
 
   componentDidUpdate() { this._reveal(); }
-  componentWillUnmount() { window.removeEventListener('scroll', this._scroll); if (this._io) this._io.disconnect(); }
+  componentWillUnmount() { window.removeEventListener('scroll', this._scroll); window.removeEventListener('resize', this._resize); if (this._io) this._io.disconnect(); }
 
   _activeNav() {
     const ids = ['about', 'streams', 'programme', 'launches', 'side-events', 'exhibit', 'parks', 'partners'];
@@ -551,10 +552,10 @@ class Component extends DCLogic {
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
       closeMenu: () => this.setState({ menuOpen: false }),
 
-      frameW: desk ? '100%' : (tab ? '834px' : '390px'),
-      framePad: desk ? '0px' : '28px',
-      frameShadow: desk ? 'none' : '0 24px 70px rgba(18,35,63,.22)',
-      frameRadius: desk ? '0px' : '18px',
+      frameW: '100%',
+      framePad: '0px',
+      frameShadow: 'none',
+      frameRadius: '0px',
 
       padX: mob ? '20px' : (tab ? '40px' : '64px'),
       navH: mob ? '58px' : '70px',
