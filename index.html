@@ -38,6 +38,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 <style>
   html { scroll-behavior: smooth; }
+  .ahp-totop{position:fixed;right:20px;bottom:20px;z-index:120;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:#003CA8;color:#FFFFFF;box-shadow:0 8px 24px rgba(0,60,168,.32);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .3s ease,transform .3s ease,background .2s ease}
+  .ahp-totop:hover{background:#12233F;color:#FFFFFF}
+  .ahp-totop:focus-visible{outline:2px solid #FCC000;outline-offset:2px}
+  .ahp-totop svg{width:20px;height:20px;display:block}
   body { margin: 0; background: #EDEFF3; font-family: Archivo, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
   a { color: #003CA8; text-decoration: none; }
   a:hover { color: #E42424; }
@@ -48,6 +52,7 @@
 
 <div style="display: flex; justifyContent: center; paddingTop: {{ framePad }}; paddingBottom: {{ framePad }}">
 <div style="position: relative; width: 100%; maxWidth: {{ frameW }}; background: #FFFFFF; overflow: hidden; color: #12233F; boxShadow: {{ frameShadow }}; borderRadius: {{ frameRadius }}">
+<a href="#top" data-totop class="ahp-totop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
 
   <div data-ribbon="1" style="position: absolute; top: 620px; left: -280px; width: 720px; pointerEvents: none; zIndex: 0; opacity: .5"><img src="assets/weave/yellow-1.png" alt="" style="width: 100%; display: block; transform: rotate(-12deg)"></div>
   <div data-ribbon="2" style="position: absolute; top: 1500px; right: -300px; width: 760px; pointerEvents: none; zIndex: 0; opacity: .42"><img src="assets/weave/blue-2.png" alt="" style="width: 100%; display: block; transform: rotate(14deg)"></div>
@@ -391,6 +396,8 @@ class Component extends DCLogic {
         });
         const bar = document.querySelector('[data-navbar]');
         if (bar) bar.style.boxShadow = y > 40 ? '0 6px 24px rgba(18,35,63,.07)' : 'none';
+        const toTop = document.querySelector('[data-totop]');
+        if (toTop) { const on = y > 400; toTop.style.opacity = on ? '1' : '0'; toTop.style.pointerEvents = on ? 'auto' : 'none'; toTop.style.transform = on ? 'translateY(0)' : 'translateY(10px)'; }
         this._activeNav();
       });
     };
