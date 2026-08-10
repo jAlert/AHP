@@ -29,14 +29,14 @@
   setTimeout(hide,7000);
 })();
 </script>
-<a href="#top" data-totop class="ahp-totop" aria-label="Back to top" style="position:fixed;right:20px;bottom:20px;z-index:120;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:#E42424;color:#FFFFFF;box-shadow:0 8px 24px rgba(228,36,36,.32);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .3s ease,transform .3s ease,background .2s ease"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;display:block"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
+<a href="#top" data-totop class="ahp-totop" aria-label="Back to top" style="position:fixed;right:20px;bottom:20px;z-index:120;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:#003CA8;color:#FFFFFF;box-shadow:0 8px 24px rgba(0,60,168,.32);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .3s ease,transform .3s ease,background .2s ease"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;display:block"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
 <div id="ahp-dots" aria-hidden="true" style="position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:110;display:flex;flex-direction:column;gap:12px;opacity:0;transition:opacity .3s ease"></div>
 <script>
 (function(){
   var ids=['top','about','objectives','streams','programme','launches','side-events','exhibit','parks','partners'];
   var wrap=document.getElementById('ahp-dots');
   if(!wrap)return;
-  var idle='rgba(18,35,63,.25)', on='#E42424';
+  var idle='rgba(18,35,63,.25)', on='#003CA8';
   var labels={top:'Home',about:'About',objectives:'Objectives',streams:'Streams',programme:'Programme',launches:'Launches','side-events':'Side Events',exhibit:'Exhibit',parks:'Parks',partners:'Partners'};
   function build(){
     var found=ids.filter(function(id){return document.getElementById(id);});
@@ -78,8 +78,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 <style>
   html { scroll-behavior: smooth; }
-  .ahp-totop{position:fixed;right:20px;bottom:20px;z-index:120;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:#E42424;color:#FFFFFF;box-shadow:0 8px 24px rgba(228,36,36,.32);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .3s ease,transform .3s ease,background .2s ease}
-  .ahp-totop:hover{background:#C21B1B;color:#FFFFFF}
+  .ahp-totop{position:fixed;right:20px;bottom:20px;z-index:120;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:#003CA8;color:#FFFFFF;box-shadow:0 8px 24px rgba(0,60,168,.32);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .3s ease,transform .3s ease,background .2s ease}
+  .ahp-totop:hover{background:#002F84;color:#FFFFFF}
   .ahp-totop:focus-visible{outline:2px solid #FCC000;outline-offset:2px}
   .ahp-totop svg{width:20px;height:20px;display:block}
   #ahp-dots a{position:relative}
