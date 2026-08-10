@@ -30,6 +30,41 @@
 })();
 </script>
 <a href="#top" data-totop class="ahp-totop" aria-label="Back to top" style="position:fixed;right:20px;bottom:20px;z-index:120;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:#003CA8;color:#FFFFFF;box-shadow:0 8px 24px rgba(0,60,168,.32);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .3s ease,transform .3s ease,background .2s ease"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;display:block"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
+<div id="ahp-dots" aria-hidden="true" style="position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:110;display:flex;flex-direction:column;gap:12px"></div>
+<script>
+(function(){
+  var ids=['top','about','objectives','streams','programme','launches','side-events','exhibit','parks','partners'];
+  var wrap=document.getElementById('ahp-dots');
+  if(!wrap)return;
+  var idle='rgba(18,35,63,.25)', on='#003CA8';
+  function build(){
+    var found=ids.filter(function(id){return document.getElementById(id);});
+    if(!found.length)return false;
+    wrap.innerHTML='';
+    found.forEach(function(id){
+      var a=document.createElement('a');
+      a.href='#'+id; a.setAttribute('data-dot',id); a.setAttribute('aria-label',id);
+      a.style.cssText='width:10px;height:10px;border-radius:999px;background:'+idle+';transition:transform .25s ease,background .25s ease;cursor:pointer;display:block';
+      wrap.appendChild(a);
+    });
+    return true;
+  }
+  function vis(){wrap.style.display=window.innerWidth<768?'none':'flex';}
+  function active(){
+    var probe=window.innerHeight*0.35, cur=null, best=-Infinity;
+    ids.forEach(function(id){var el=document.getElementById(id);if(!el)return;var t=el.getBoundingClientRect().top;if(t<=probe&&t>best){best=t;cur=id;}});
+    wrap.querySelectorAll('[data-dot]').forEach(function(d){
+      var sel=d.getAttribute('data-dot')===cur;
+      d.style.background=sel?on:idle; d.style.transform=sel?'scale(1.6)':'scale(1)';
+    });
+  }
+  var tries=0;
+  (function wait(){
+    if(build()){vis();active();window.addEventListener('scroll',active,{passive:true});window.addEventListener('resize',function(){vis();active();},{passive:true});}
+    else if(tries++<60)setTimeout(wait,100);
+  })();
+})();
+</script>
 <x-dc>
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
