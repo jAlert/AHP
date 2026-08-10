@@ -30,7 +30,7 @@
 })();
 </script>
 <a href="#top" data-totop class="ahp-totop" aria-label="Back to top" style="position:fixed;right:20px;bottom:20px;z-index:120;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:#003CA8;color:#FFFFFF;box-shadow:0 8px 24px rgba(0,60,168,.32);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .3s ease,transform .3s ease,background .2s ease"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;display:block"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
-<div id="ahp-dots" aria-hidden="true" style="position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:110;display:flex;flex-direction:column;gap:12px"></div>
+<div id="ahp-dots" aria-hidden="true" style="position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:110;display:flex;flex-direction:column;gap:12px;opacity:0;transition:opacity .3s ease"></div>
 <script>
 (function(){
   var ids=['top','about','objectives','streams','programme','launches','side-events','exhibit','parks','partners'];
@@ -53,6 +53,9 @@
   function active(){
     var probe=window.innerHeight*0.35, cur=null, best=-Infinity;
     ids.forEach(function(id){var el=document.getElementById(id);if(!el)return;var t=el.getBoundingClientRect().top;if(t<=probe&&t>best){best=t;cur=id;}});
+    var hideRail=(cur===null||cur==='top');
+    wrap.style.opacity=hideRail?'0':'1';
+    wrap.style.pointerEvents=hideRail?'none':'auto';
     wrap.querySelectorAll('[data-dot]').forEach(function(d){
       var sel=d.getAttribute('data-dot')===cur;
       d.style.background=sel?on:idle; d.style.transform=sel?'scale(1.6)':'scale(1)';
