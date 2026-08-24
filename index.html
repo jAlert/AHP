@@ -135,7 +135,6 @@
         <a href="#side-events" onClick="{{ closeMenu }}" style="padding: 11px 0; fontSize: 15px; fontWeight: 600; color: #12233F; borderBottom: 1px solid #F2F4F8">Side events</a>
         <a href="#exhibit" onClick="{{ closeMenu }}" style="padding: 11px 0; fontSize: 15px; fontWeight: 600; color: #12233F; borderBottom: 1px solid #F2F4F8">Exhibit</a>
         <a href="#parks" onClick="{{ closeMenu }}" style="padding: 11px 0; fontSize: 15px; fontWeight: 600; color: #12233F; borderBottom: 1px solid #F2F4F8">Parks</a>
-        <a href="#partners" onClick="{{ closeMenu }}" style="padding: 11px 0; fontSize: 15px; fontWeight: 600; color: #12233F">Partners</a>
       </nav>
     </sc-if>
   </header>
@@ -403,22 +402,6 @@
       </div>
     </div>
   </section>
-<!--  
-  <section id="partners" data-screen-label="Partners" style="position: relative; zIndex: 1; padding: {{ secPad }} {{ padX }}; background: #F7F9FC; borderTop: 1px solid #EDF0F5">
-    <div style="maxWidth: 1100px; margin: 0 auto">
-      <div data-reveal="1" style="display: flex; alignItems: center; gap: 12px; marginBottom: {{ gap28 }}">
-        <span style="width: 28px; height: 3px; background: #003CA8"></span>
-        <span style="fontSize: 11px; fontWeight: 800; letterSpacing: .14em; textTransform: uppercase; color: #003CA8">Partners</span>
-      </div>
-      <h2 data-reveal="1" style="margin: 0 0 {{ gap40 }}; maxWidth: 22ch; fontSize: {{ secSize }}; lineHeight: 1.08; fontWeight: 800; letterSpacing: -.025em; color: #12233F; textWrap: balance">Organised with</h2>
-      <div style="display: grid; gridTemplateColumns: {{ cols3 }}; gap: 1px; background: #FFFFFF; border: 1px solid #E4E8EF; borderRadius: 12px; overflow: hidden">
-        <sc-for list="{{ partners }}" as="p" hint-placeholder-count="11">
-          <div data-reveal="1" style="display: flex; alignItems: center; minHeight: {{ partnerH }}; padding: {{ partnerPad }}; background: #FFFFFF; boxShadow: 0 0 0 1px #E4E8EF; fontSize: {{ smallSize }}; lineHeight: 1.45; fontWeight: 600; color: #33475F; transition: background .25s ease" style-hover="background: #FBFCFE">{{ p }}</div>
-        </sc-for>
-      </div>
-    </div>
-  </section>
-  -->
 
   <footer data-screen-label="Footer" style="position: relative; zIndex: 1; padding: {{ secPad }} {{ padX }} {{ gap40 }}; background: #12233F; color: #FFFFFF; overflow: hidden">
     <div style="position: absolute; top: -80px; left: -140px; width: 520px; opacity: .13; pointerEvents: none"><img src="assets/weave/red-1.png" alt="" style="width: 100%; display: block"></div>
@@ -477,7 +460,7 @@ class Component extends DCLogic {
   componentWillUnmount() { window.removeEventListener('scroll', this._scroll); window.removeEventListener('resize', this._resize); if (this._io) this._io.disconnect(); }
 
   _activeNav() {
-    const ids = ['about', 'streams', 'programme', 'launches', 'side-events', 'exhibit', 'parks', 'partners'];
+    const ids = ['about', 'streams', 'programme', 'launches', 'side-events', 'exhibit', 'parks'];
     let current = null;
     ids.forEach(id => {
       const s = document.getElementById(id);
@@ -531,23 +514,23 @@ class Component extends DCLogic {
       { n: '1', color: '#E42424', onDark: '#FF6B5E', badgeText: '#12233F', bg: 'assets/parks/MT_TIMPOONG.webp', title: 'AHP as an Anchor for Resilience',
         text: 'Demonstrate how AHPs and Nature-based Solutions (NbS) contribute to climate and food security, addressing the threats posed by the triple planetary crisis of biodiversity loss, climate change, and pollution. Highlight the essential role of biodiversity corridors and transboundary conservation initiatives in maintaining ecological connectivity.',
         sessions: [
-          { letter: 'A', title: 'Ecosystem Restoration and Species Conservation', chair: 'RED Laudemir S. Salac', org: 'Haribon Foundation for the Conservation of Natural Resources, Inc.', venue: 'Satin 2', time:'1:30pm - 5:00pm DAY 1', topics: ['Species conservation programs', 'Invasive Alien Species', 'Lessons from ASEAN restoration initiatives', 'Knowledge capture, storage, and sharing mechanisms in protected areas'] },
-          { letter: 'B', title: 'Climate Resilience and Nature-Based Solutions (NbS)', chair: 'Dr. Mundita S. Lim', org: 'NbS Support Net (PCP4NBS)', venue: 'Quezon 3', time:'1:30pm - 5:00pm DAY 1', topics: ['Biodiversity and Climate Nexus', 'NbS for climate adaptation and mitigation'] },
-          { letter: 'C', title: 'Ecological Connectivity', chair: 'RED Felix S. Mirasol', org: 'Biodiversity Corridor Project, UNDP', venue: 'Quezon 1 & 2', time:'1:30pm - 5:00pm DAY 1', topics: ['Biodiversity corridors and ecological networks', 'Landscape and Seascape Conservation Approaches', 'Other Effective Areas-based Conservation Measures initiatives'] }
+          { letter: 'A', title: 'Ecosystem Restoration and Species Conservation', chair: 'RED Laudemir S. Salac', org: 'Haribon Foundation for the Conservation of Natural Resources, Inc.', venue: 'Satin 2', time:'1:30 - 5:00 PM DAY 1', topics: ['Species conservation programs', 'Invasive Alien Species', 'Lessons from ASEAN restoration initiatives', 'Knowledge capture, storage, and sharing mechanisms in protected areas'] },
+          { letter: 'B', title: 'Climate Resilience and Nature-Based Solutions (NbS)', chair: 'Dr. Mundita S. Lim', org: 'NbS Support Net (PCP4NBS)', venue: 'Quezon 3', time:'1:30 - 5:00 PM DAY 1', topics: ['Biodiversity and Climate Nexus', 'NbS for climate adaptation and mitigation'] },
+          { letter: 'C', title: 'Ecological Connectivity', chair: 'RED Felix S. Mirasol', org: 'Biodiversity Corridor Project, UNDP', venue: 'Quezon 1 & 2', time:'1:30 - 5:00 PM DAY 1', topics: ['Biodiversity corridors and ecological networks', 'Landscape and Seascape Conservation Approaches', 'Other Effective Areas-based Conservation Measures initiatives'] }
         ] },
       { n: '2', color: '#F08424', onDark: '#F9A03F', badgeText: '#12233F', bg: 'assets/parks/MT_KATINGLAD.webp', title: 'AHP as a Prosperity Corridor',
         text: 'Mainstream biodiversity by leveraging AHPs as critical natural capital and drivers of the blue economy, and fostering partnerships with the private sector and securing investments for PAs safeguarding resources upon which businesses and key economic sectors depend.',
         sessions: [
-          { letter: 'A', title: 'Sustainable Tourism and Green Growth', chair: 'AHP Committee — Thailand', org: 'DENR-BMB', venue: 'Satin 2', time:'9:00am - 12:00nn DAY 2', topics: ['Ecotourism models and standards', 'Managing tourism impacts and carrying capacity', 'Community-based tourism enterprises', 'Sustainable Agricultural Practices'] },
-          { letter: 'B', title: 'Natural Capital Accounting and Blue Economy', chair: 'ASec. Noralene M. Uy', org: 'REECS and BMB Coastal and Marine Division', venue: 'Quezon 3', time:'9:00am - 12:00nn DAY 2', topics: ['Ecosystem Services Valuation / Payment for Ecosystem Services', 'Blue economy opportunities in AHPs (fisheries, mangroves, ecotourism)', 'Fisheries, Maritime and Energy'] },
-          { letter: 'C', title: 'Sustainable Financing and Partnership Engagement', chair: 'Dir. Al O. Orolfo', org: 'Conservation International Philippines, AGCF and BIOFIN', venue: 'Quezon 1 & 2', time:'9:00am - 12:00nn DAY 2', topics: ['Innovative financing (e.g., trust funds, PES, carbon financing)', 'Private sector partnerships and investments', 'Financing mechanisms for long-term PA sustainability'] }
+          { letter: 'A', title: 'Sustainable Tourism and Green Growth', chair: 'AHP Committee — Thailand', org: 'DENR-BMB', venue: 'Satin 2', time:'9:00 - 12:00 PM DAY 2', topics: ['Ecotourism models and standards', 'Managing tourism impacts and carrying capacity', 'Community-based tourism enterprises', 'Sustainable Agricultural Practices'] },
+          { letter: 'B', title: 'Natural Capital Accounting and Blue Economy', chair: 'ASec. Noralene M. Uy', org: 'REECS and BMB Coastal and Marine Division', venue: 'Quezon 3', time:'9:00 - 12:00 PM DAY 2', topics: ['Ecosystem Services Valuation / Payment for Ecosystem Services', 'Blue economy opportunities in AHPs (fisheries, mangroves, ecotourism)', 'Fisheries, Maritime and Energy'] },
+          { letter: 'C', title: 'Sustainable Financing and Partnership Engagement', chair: 'Dir. Al O. Orolfo', org: 'Conservation International Philippines, AGCF and BIOFIN', venue: 'Quezon 1 & 2', time:'9:00 - 12:00 PM DAY 2', topics: ['Innovative financing (e.g., trust funds, PES, carbon financing)', 'Private sector partnerships and investments', 'Financing mechanisms for long-term PA sustainability'] }
         ] },
       { n: '3', color: '#003CA8', onDark: '#30CCFC', badgeText: '#12233F', bg: 'assets/parks/MT_APO.webp', title: 'AHP for People Empowerment',
         text: 'Promote inclusive governance structures by integrating traditional knowledge, fostering sustainable livelihoods and Biodiversity-Friendly Enterprises, and ensuring the active leadership of Women, Youth, Indigenous Peoples and Local Communities in PA and AHP management.',
         sessions: [
-          { letter: 'A', title: 'Governance and Social Marketing', chair: 'RED Atty. Ronnel C. Sopsop', org: 'Forest Foundation Philippines', venue: 'Satin 2', time:'1:30pm - 5:00pm DAY 2', topics: ['The role of science, tradition and policy in strengthening PA governance frameworks', 'Behavioral Change', 'Conservation through creative arts'] },
-          { letter: 'B', title: 'Harnessing Indigenous and Traditional Knowledge', chair: 'RED Atty. Ma. Mercedes V. Dumagan', org: 'WCS and NTFP-EP', venue: 'Quezon 3', time:'1:30pm - 5:00pm DAY 2', topics: ['Indigenous Peoples\' roles in conservation', 'Traditional ecological knowledge systems', 'Co-management and community-led initiatives'] },
-          { letter: 'C', title: 'Inclusive Participation and Capacity Development', chair: 'NParks Singapore', org: 'Hanns Seidel Foundation in ASEAN', venue: 'Quezon 1 & 2', time:'1:30pm - 5:00pm DAY 2', topics: ['Engagement of women and youth in conservation', 'Enhanced stakeholders engagement through citizen science'] }
+          { letter: 'A', title: 'Governance and Social Marketing', chair: 'RED Atty. Ronnel C. Sopsop', org: 'Forest Foundation Philippines', venue: 'Satin 2', time:'1:30 - 5:00 PM DAY 2', topics: ['The role of science, tradition and policy in strengthening PA governance frameworks', 'Behavioral Change', 'Conservation through creative arts'] },
+          { letter: 'B', title: 'Harnessing Indigenous and Traditional Knowledge', chair: 'RED Atty. Ma. Mercedes V. Dumagan', org: 'WCS and NTFP-EP', venue: 'Quezon 3', time:'1:30 - 5:00 PM DAY 2', topics: ['Indigenous Peoples\' roles in conservation', 'Traditional ecological knowledge systems', 'Co-management and community-led initiatives'] },
+          { letter: 'C', title: 'Inclusive Participation and Capacity Development', chair: 'NParks Singapore', org: 'Hanns Seidel Foundation in ASEAN', venue: 'Quezon 1 & 2', time:'1:30 - 5:00 PM DAY 2', topics: ['Engagement of women and youth in conservation', 'Enhanced stakeholders engagement through citizen science'] }
         ] }
     ];
 
@@ -709,7 +692,6 @@ class Component extends DCLogic {
         { time: 'Day 1–3', text: 'Photo wall and marketplace' },
         { time: 'Daily', text: 'Dedicated exhibits viewing and networking windows' }
       ],
-      partners: ['ASEAN Centre for Biodiversity', 'ASEAN', 'Haribon Foundation', 'NbS Support Net', 'Biodiversity Corridor Project, UNDP', 'Department of Tourism', 'Resources, Environment, and Economics Center for Studies, Inc. (REECS)', 'Conservation International Philippines, AGCF and BIOFIN', 'Forest Foundation Philippines', 'Wildlife Conservation Society / Indigenous Peoples and Biodiversity Coalition', 'Hanns Seidel Foundation']
     };
   }
 }
