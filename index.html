@@ -149,10 +149,17 @@
         <span style="display: inline-block; padding: 3px 9px; borderRadius: 999px; background: #003CA8; color: #FFFFFF; fontSize: 10px; fontWeight: 800; letterSpacing: .1em">ASEAN 2026</span>
         <span style="fontSize: 12px; fontWeight: 600; color: #445975; letterSpacing: .01em">Philippine Chairship — “Navigating Our Future, Together”</span>
       </div>
+
+<div style="position: relative; zIndex: 1; ">
+    <div style="maxWidth: 600px; margin: 0 auto; ">
+      <img src="assets/ahp_logos.webp" alt="ASEAN Philippines 2026, DENR, BMB, Bagong Pilipinas, ASEAN Heritage Parks, ASEAN Centre for Biodiversity, ASEAN" style="width: 100%; maxWidth: 780px; height: auto; display: block; margin: 0 auto">
+    </div>
+  </div>
+
       <div data-reveal="1" style="display: flex; justifyContent: center; marginBottom: {{ gap32 }}">
-        <img src="assets/logo-master.webp" alt="ASEAN Heritage Parks Forum 2026" style="width: 100%; maxWidth: {{ heroLogoW }}; height: auto; display: block">
+        <img src="assets/ahp_website_logo.webp" alt="ASEAN Heritage Parks Forum 2026" style="width: 100%; maxWidth: {{ heroLogoW }}; height: auto; display: block">
       </div>
-      <h1 data-reveal="1" style="margin: 0 auto {{ gap28 }}; maxWidth: 20ch; fontSize: {{ heroSize }}; lineHeight: 1.06; fontWeight: 800; letterSpacing: -.025em; color: #003CA8; textWrap: balance">Navigating a Sustainable Future for ASEAN Heritage Parks</h1>
+     <!-- <h1 data-reveal="1" style="margin: 0 auto {{ gap28 }};  fontSize: {{ heroSize }}; lineHeight: 1.06; fontWeight: 800; letterSpacing: -.025em; color: #003CA8; textWrap: balance">Navigating a Sustainable Future for ASEAN Heritage Parks</h1>-->
       <div data-reveal="1" style="display: flex; flexWrap: wrap; justifyContent: center; alignItems: center; gap: {{ gap20 }}; marginBottom: {{ gap40 }}">
         <div style="display: flex; alignItems: baseline; gap: 8px">
           <span style="fontSize: {{ dateSize }}; fontWeight: 900; letterSpacing: -.03em; color: #E42424">8–10</span>
@@ -171,8 +178,8 @@
 
   <div style="position: relative; zIndex: 1; padding: 0 {{ padX }} {{ gap56 }}">
     <div style="maxWidth: 1100px; margin: 0 auto; padding: {{ gap28 }} 0 0; borderTop: 1px solid #EDF0F5">
-      <div style="fontSize: 10px; fontWeight: 800; letterSpacing: .14em; textTransform: uppercase; color: #9AA7BC; textAlign: center; marginBottom: 18px">Convened by</div>
-      <img src="assets/logos-partners.webp" alt="ASEAN Philippines 2026, DENR, BMB, Bagong Pilipinas, ASEAN Heritage Parks, ASEAN Centre for Biodiversity, ASEAN" style="width: 100%; maxWidth: 780px; height: auto; display: block; margin: 0 auto">
+      <div style="fontSize: 10px; fontWeight: 800; letterSpacing: .14em; textTransform: uppercase; color: #9AA7BC; textAlign: center; marginBottom: 18px">Partners</div>
+      <img src="assets/ahp_logos.webp" alt="ASEAN Philippines 2026, DENR, BMB, Bagong Pilipinas, ASEAN Heritage Parks, ASEAN Centre for Biodiversity, ASEAN" style="width: 100%; maxWidth: 780px; height: auto; display: block; margin: 0 auto">
     </div>
   </div>
 
@@ -630,9 +637,9 @@ class Component extends DCLogic {
 
       heroPadTop: mob ? '24px' : (tab ? '32px' : '40px'),
       heroPadBottom: mob ? '40px' : '56px',
-      heroLogoW: mob ? '260px' : (tab ? '360px' : '440px'),
-      heroSize: mob ? '30px' : (tab ? '44px' : '58px'),
-      dateSize: mob ? '38px' : '52px',
+      heroLogoW: mob ? '490px' : (tab ? '630px' : '800px'),
+      heroSize: mob ? '20px' : (tab ? '30px' : '40px'),
+      dateSize: mob ? '24px' : '36px',
       dateSub: mob ? '17px' : '22px',
       venueSize: mob ? '14px' : '15px',
       dotDisplay: mob ? 'none' : 'inline-block',
