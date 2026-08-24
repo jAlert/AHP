@@ -34,11 +34,11 @@
 <div id="ahp-dots" aria-hidden="true" style="position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:110;display:flex;flex-direction:column;gap:12px;opacity:0;transition:opacity .3s ease"></div>
 <script>
 (function(){
-  var ids=['top','about','objectives','streams','programme','launches','side-events','exhibit','parks','partners'];
+  var ids=['top','about','objectives','streams','programme','launches','side-events','exhibit','parks'];
   var wrap=document.getElementById('ahp-dots');
   if(!wrap)return;
   var idle='rgba(18,35,63,.25)', on='#003CA8';
-  var labels={top:'Home',about:'About',objectives:'Objectives',streams:'Streams',programme:'Programme',launches:'Launches','side-events':'Side Events',exhibit:'Exhibit',parks:'Parks',partners:'Partners'};
+  var labels={top:'Home',about:'About',objectives:'Objectives',streams:'Streams',programme:'Programme',launches:'Launches','side-events':'Side Events',exhibit:'Exhibit',parks:'Parks'};
   function build(){
     var found=ids.filter(function(id){return document.getElementById(id);});
     if(!found.length)return false;
@@ -123,7 +123,6 @@
         <a href="#side-events" data-nav="side-events" style="fontSize: 13px; fontWeight: 600; letterSpacing: .01em; color: #5A6B85; paddingBottom: 2px; borderBottom: 2px solid transparent; transition: color .2s ease" style-hover="color: #12233F">Side events</a>
         <a href="#exhibit" data-nav="exhibit" style="fontSize: 13px; fontWeight: 600; letterSpacing: .01em; color: #5A6B85; paddingBottom: 2px; borderBottom: 2px solid transparent; transition: color .2s ease" style-hover="color: #12233F">Exhibit</a>
         <a href="#parks" data-nav="parks" style="fontSize: 13px; fontWeight: 600; letterSpacing: .01em; color: #5A6B85; paddingBottom: 2px; borderBottom: 2px solid transparent; transition: color .2s ease" style-hover="color: #12233F">Parks</a>
-        <a href="#partners" data-nav="partners" style="fontSize: 13px; fontWeight: 600; letterSpacing: .01em; color: #5A6B85; paddingBottom: 2px; borderBottom: 2px solid transparent; transition: color .2s ease" style-hover="color: #12233F">Partners</a>
       </nav>
       <button onClick="{{ toggleMenu }}" style="display: {{ burgerDisplay }}; alignItems: center; gap: 8px; border: 1px solid #D4DAE4; background: #FFFFFF; borderRadius: 999px; padding: 9px 16px; fontFamily: Archivo, sans-serif; fontSize: 12px; fontWeight: 700; letterSpacing: .08em; textTransform: uppercase; color: #12233F; cursor: pointer">Menu</button>
     </div>
@@ -404,7 +403,7 @@
       </div>
     </div>
   </section>
-
+<!--  
   <section id="partners" data-screen-label="Partners" style="position: relative; zIndex: 1; padding: {{ secPad }} {{ padX }}; background: #F7F9FC; borderTop: 1px solid #EDF0F5">
     <div style="maxWidth: 1100px; margin: 0 auto">
       <div data-reveal="1" style="display: flex; alignItems: center; gap: 12px; marginBottom: {{ gap28 }}">
@@ -419,6 +418,7 @@
       </div>
     </div>
   </section>
+  -->
 
   <footer data-screen-label="Footer" style="position: relative; zIndex: 1; padding: {{ secPad }} {{ padX }} {{ gap40 }}; background: #12233F; color: #FFFFFF; overflow: hidden">
     <div style="position: absolute; top: -80px; left: -140px; width: 520px; opacity: .13; pointerEvents: none"><img src="assets/weave/red-1.png" alt="" style="width: 100%; display: block"></div>
