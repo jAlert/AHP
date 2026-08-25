@@ -70,6 +70,39 @@
   })();
 })();
 </script>
+<script>
+/* Anchor nav fix: native "scroll-behavior:smooth" lands short when scrolling
+   DOWN because unsized/lazy images above the target load mid-scroll and push
+   the target lower. This scrolls to the element and re-corrects until layout
+   settles (or the user takes over). */
+(function(){
+  function navOffset(){return 0;}
+  function targetFor(hash){if(!hash||hash.length<2||hash.charAt(0)!=='#')return null;try{return document.getElementById(decodeURIComponent(hash.slice(1)));}catch(e){return document.getElementById(hash.slice(1));}}
+  function yFor(el){return (window.pageYOffset||document.documentElement.scrollTop||0)+el.getBoundingClientRect().top-navOffset();}
+  document.addEventListener('click',function(e){
+    var a=e.target&&e.target.closest?e.target.closest('a[href^="#"]'):null;
+    if(!a)return;
+    var hash=a.getAttribute('href');
+    var el=targetFor(hash);
+    if(!el)return;
+    e.preventDefault();
+    var top=yFor(el);if(top<0)top=0;
+    window.scrollTo({top:top,behavior:'smooth'});
+    try{if(history.replaceState)history.replaceState(null,'',hash);else location.hash=hash;}catch(err){}
+    var userTook=false;
+    function flag(){userTook=true;detach();}
+    function detach(){['wheel','touchstart','keydown'].forEach(function(t){window.removeEventListener(t,flag);});}
+    ['wheel','touchstart','keydown'].forEach(function(t){window.addEventListener(t,flag,{passive:true});});
+    // Re-correct after likely reflow points; snap precisely on the later passes.
+    [250,550,900,1400].forEach(function(d,i){setTimeout(function(){
+      if(userTook)return;
+      var want=yFor(el);if(want<0)want=0;
+      if(Math.abs((window.pageYOffset||0)-want)>2)window.scrollTo({top:want,behavior:i<2?'smooth':'auto'});
+    },d);});
+    setTimeout(detach,1500);
+  },false);
+})();
+</script>
 <x-dc>
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
