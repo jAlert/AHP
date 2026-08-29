@@ -435,16 +435,27 @@
     </div>
   </section>
 
+
   <footer data-screen-label="Footer" style="position: relative; zIndex: 1; padding: {{ secPad }} {{ padX }} {{ gap40 }}; background: #12233F; color: #FFFFFF; overflow: hidden">
     <div style="position: absolute; top: -80px; left: -140px; width: 520px; opacity: .13; pointerEvents: none"><img src="assets/weave/red-1.png" alt="" style="width: 100%; display: block"></div>
     <div style="position: relative; maxWidth: 1100px; margin: 0 auto">
       <img src="assets/logo-white.webp" alt="ASEAN Heritage Parks Forum 2026" style="width: 100%; maxWidth: {{ footLogoW }}; height: auto; display: block; marginBottom: {{ gap32 }}">
-      <div style="display: grid; gridTemplateColumns: {{ cols2 }}; gap: {{ gap32 }}; paddingBottom: {{ gap32 }}; borderBottom: 1px solid #2B4066">
-        <div style="fontSize: {{ quoteSize }}; lineHeight: 1.24; fontWeight: 700; letterSpacing: -.025em; color: #FFFFFF; maxWidth: 20ch">Navigating a Sustainable Future for ASEAN Heritage Parks</div>
-        <div style="display: grid; gap: 10px; fontSize: {{ smallSize }}; lineHeight: 1.55; color: #A9BAD3">
-          <div><span style="color: #6F86A8">Dates</span><br>8–10 September 2026</div>
-          <div><span style="color: #6F86A8">Venue</span><br>Seda Vertis North, Quezon City, Metro Manila, Philippines</div>
-          <div><span style="color: #6F86A8">Convened by</span><br>Department of Environment and Natural Resources — Biodiversity Management Bureau, with the ASEAN Centre for Biodiversity</div>
+      <div style="display: grid; gridTemplateColumns: {{ cols2 }}; gap: {{ gap32 }}; alignItems: start; paddingBottom: {{ gap32 }}; borderBottom: 1px solid #2B4066">
+        <div>
+          <div style="fontSize: {{ quoteSize }}; lineHeight: 1.24; fontWeight: 700; letterSpacing: -.025em; color: #FFFFFF; maxWidth: 20ch; marginBottom: {{ gap28 }}">Navigating a Sustainable Future for ASEAN Heritage Parks</div>
+          <div style="display: grid; gap: 10px; fontSize: {{ smallSize }}; lineHeight: 1.55; color: #A9BAD3">
+            <div><span style="color: #6F86A8">Dates</span><br>8–10 September 2026</div>
+            <div><span style="color: #6F86A8">Venue</span><br>Seda Vertis North, Quezon City, Metro Manila, Philippines</div>
+            <div><span style="color: #6F86A8">Convened by</span><br>Department of Environment and Natural Resources — Biodiversity Management Bureau, with the ASEAN Centre for Biodiversity</div>
+          </div>
+        </div>
+        <div>
+          <div style="fontSize: {{ cardTitle }}; lineHeight: 1.24; fontWeight: 800; letterSpacing: -.02em; color: #FFFFFF; marginBottom: 10px">Follow the Forum</div>
+          <p style="margin: 0 0 {{ gap20 }}; fontSize: {{ smallSize }}; lineHeight: 1.55; color: #A9BAD3; maxWidth: 40ch">Scan the QR code or tap the link for the latest news and updates on the DENR Biodiversity Facebook page.</p>
+          <a href="https://www.facebook.com/denr.biodiversity/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; alignItems: center; gap: 8px; fontSize: {{ bodySize }}; fontWeight: 700; color: #FFFFFF; textDecoration: none; borderBottom: 2px solid rgba(255,255,255,.4); paddingBottom: 2px" style-hover="border-color: #FFFFFF">facebook.com/denr.biodiversity ↗</a>
+          <div style="marginTop: {{ gap24 }}; width: 150px">
+            <img src="assets/qr/denr-fb-qr.svg" alt="QR code to the DENR Biodiversity Facebook page" style="display: block; width: 100%; height: auto">
+          </div>
         </div>
       </div>
       <div style="paddingTop: {{ gap24 }}; fontSize: 12px; color: #6F86A8">© 2026 DENR-BMB</div>
