@@ -394,20 +394,21 @@
         <span style="width: 28px; height: 3px; background: #FCC000"></span>
         <span style="fontSize: 11px; fontWeight: 800; letterSpacing: .14em; textTransform: uppercase; color: #FCC000">Exhibit and marketplace</span>
       </div>
-      <div style="display: grid; gridTemplateColumns: {{ cols2 }}; gap: {{ gap48 }}; alignItems: start">
-        <div>
-          <h2 data-reveal="1" style="margin: 0 0 {{ gap20 }}; fontSize: {{ secSize }}; lineHeight: 1.08; fontWeight: 800; letterSpacing: -.025em; color: #FFFFFF; textWrap: balance">The exhibit runs the whole three days</h2>
-          <p data-reveal="1" style="margin: 0 0 {{ gap28 }}; fontSize: {{ bodySize }}; lineHeight: 1.6; color: #A9C4EE; maxWidth: 52ch">Opened on Day 1 at 11:00 AM in the Lobby and Exhibit Area, with dedicated viewing and networking windows on every day of the Forum.</p>
-        </div>
-        <div data-reveal="1" style="display: grid; gap: {{ gap12 }}">
-          <sc-for list="{{ exhibitItems }}" as="x" hint-placeholder-count="4">
-            <div style="display: flex; alignItems: center; gap: {{ gap20 }}; padding: {{ exhibitPad }}; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); borderRadius: 10px; transition: background .25s ease" style-hover="background: rgba(255,255,255,.13)">
-              <span style="flexShrink: 0; fontSize: 12px; fontWeight: 700; color: #FCC000; width: 92px">{{ x.time }}</span>
-              <span style="fontSize: {{ smallSize }}; lineHeight: 1.45; fontWeight: 600; color: #FFFFFF">{{ x.text }}</span>
-            </div>
+      <div style="maxWidth: 640px; marginBottom: {{ gap28 }}">
+        <h2 data-reveal="1" style="margin: 0 0 {{ gap20 }}; fontSize: {{ secSize }}; lineHeight: 1.08; fontWeight: 800; letterSpacing: -.025em; color: #FFFFFF; textWrap: balance">The exhibit runs the whole three days</h2>
+        <p data-reveal="1" style="margin: 0; fontSize: {{ bodySize }}; lineHeight: 1.6; color: #A9C4EE; maxWidth: 52ch">Opened on Day 1 at 11:00 AM in the Lobby and Exhibit Area, with dedicated viewing and networking windows on every day of the Forum.</p>
+      </div>
+      <figure data-reveal="1" style="margin: 0; borderRadius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,.14)">
+        <div style="display: grid; gridTemplateColumns: {{ cols4 }}; gap: {{ gap12 }}; padding: {{ exhibitPad }}; background: rgba(255,255,255,.07); borderBottom: 1px solid rgba(255,255,255,.14)">
+          <sc-for list="{{ legend }}" as="l" hint-placeholder-count="6">
+            <span style="display: inline-flex; alignItems: center; gap: 8px">
+              <img src="{{ l.icon }}" alt="" style="flexShrink: 0; width: 24px; height: 24px; display: block"/>
+              <span style="fontSize: {{ smallSize }}; lineHeight: 1.35; fontWeight: 600; color: #FFFFFF">{{ l.label }}</span>
+            </span>
           </sc-for>
         </div>
-      </div>
+        <img src="assets/exhibit/exhibit_layout.webp" alt="Exhibit floor layout" style="display: block; width: 100%; height: auto"/>
+      </figure>
     </div>
   </section>
 
@@ -717,11 +718,14 @@ class Component extends DCLogic {
         { time: 'Day 3 · Morning', color: '#F08424', title: 'Workshop on the AHP Programme Operations Manual', text: 'A capacity enhancement workshop for all AHP Managers and other relevant stakeholders in the region, to enhance their understanding and effectively implement the guidelines set in the AHP Programme Operations Manual in their respective AHPs and AMS.' },
         { time: 'Day 3 · Morning', color: '#003CA8', title: 'Youth Empowerment Co-design Lab', text: 'An intergenerational workshop bringing together youth delegates, policymakers, AHP managers, conservation practitioners, and development partners. Using the World Café methodology, participants co-develop practical recommendations for advancing youth leadership.' }
       ],
-      exhibitItems: [
-        { time: 'Day 1', text: 'Opening of the Exhibits, then press conference and networking' },
-        { time: 'Day 1–3', text: 'Pop-up modules for the 14 Philippine ASEAN Heritage Parks' },
-        { time: 'Day 1–3', text: 'Photo wall and marketplace' },
-        { time: 'Daily', text: 'Dedicated exhibits viewing and networking windows' }
+      legend: [
+        { icon: 'assets/icons/pixels/pixel_1.webp', label: 'VR Exhibit' },
+        { icon: 'assets/icons/pixels/pixel_2.webp', label: 'PH and ASEAN Booths' },
+        { icon: 'assets/icons/pixels/pixel_3.webp', label: 'Exhibit' },
+        { icon: 'assets/icons/pixels/pixel_4.webp', label: 'Main Hall/Breakout Rooms' },
+        { icon: 'assets/icons/pixels/pixel_5.webp', label: 'Press Conference' },
+        { icon: 'assets/icons/pixels/pixel_6.webp', label: 'Partner Booths' },
+        { icon: 'assets/icons/pixels/pixel_7.webp', label: 'Legend 7' }
       ],
     };
   }
