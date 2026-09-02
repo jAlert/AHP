@@ -299,6 +299,9 @@
                   </div>
                 </sc-for>
               </div>
+              <div style="padding: {{ cardPad }}; background: #0E1E36; borderTop: 1px solid #2B4066">
+                <a href="{{ s.link }}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; alignItems: center; gap: 8px; fontSize: 12px; fontWeight: 800; letterSpacing: .07em; textTransform: uppercase; color: {{ s.onDark }}; textDecoration: none" style-hover="opacity: .8">View Stream {{ s.n }} details<span style="fontSize: 14px">→</span></a>
+              </div>
             </sc-if>
           </div>
         </sc-for>
@@ -422,14 +425,14 @@
       <p data-reveal="1" style="margin: 0 0 {{ gap40 }}; maxWidth: 58ch; fontSize: {{ bodySize }}; lineHeight: 1.6; color: #5A6B85">Each park gets a pop-up module in the exhibit area.</p>
       <div style="display: grid; gridTemplateColumns: {{ cols4 }}; gap: {{ gap16 }}">
         <sc-for list="{{ parks }}" as="p" hint-placeholder-count="14">
-          <div data-reveal="1" style="border: 1px solid #E4E8EF; borderRadius: 10px; overflow: hidden; background: #FFFFFF; transition: transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease" style-hover="transform: translateY(-4px); box-shadow: 0 14px 32px rgba(18,35,63,.1)">
+          <a href="{{ p.link }}" target="_blank" rel="noopener noreferrer" data-reveal="1" style="display: block; textDecoration: none; border: 1px solid #E4E8EF; borderRadius: 10px; overflow: hidden; background: #FFFFFF; transition: transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease" style-hover="transform: translateY(-4px); box-shadow: 0 14px 32px rgba(18,35,63,.1)">
             <div style="position: relative; aspectRatio: 3 / 4; background: #EDF0F5; overflow: hidden">
               <img src="{{ p.photo }}" alt="" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .55s cubic-bezier(.16,1,.3,1)" style-hover="transform: scale(1.06)">
               <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 34px 14px 14px; background: linear-gradient(to top, rgba(9,18,33,.85) 0%, rgba(9,18,33,.5) 45%, rgba(9,18,33,0) 100%); pointerEvents: none">
                 <div style="fontSize: {{ parkNameSize }}; lineHeight: 1.24; fontWeight: 700; letterSpacing: -.015em; color: #FFFFFF; textShadow: 0 1px 3px rgba(9,18,33,.4)">{{ p.name }}</div>
               </div>
             </div>
-          </div>
+          </a>
         </sc-for>
       </div>
     </div>
@@ -554,21 +557,21 @@ class Component extends DCLogic {
     const set = v => () => this.setState({ device: v, menuOpen: false });
 
     const STREAMS = [
-      { n: '1', color: '#E42424', onDark: '#FF6B5E', badgeText: '#12233F', bg: 'assets/parks/MT_TIMPOONG.webp', title: 'AHP as an Anchor for Resilience',
+      { n: '1', color: '#E42424', onDark: '#FF6B5E', badgeText: '#12233F', bg: 'assets/parks/MT_TIMPOONG.webp', title: 'AHP as an Anchor for Resilience', link: 'https://drive.google.com/drive/folders/131jeu3ZD5SLJykvBlYIZ7JxVymV9h89d',
         text: 'Demonstrate how AHPs and Nature-based Solutions (NbS) contribute to climate and food security, addressing the threats posed by the triple planetary crisis of biodiversity loss, climate change, and pollution. Highlight the essential role of biodiversity corridors and transboundary conservation initiatives in maintaining ecological connectivity.',
         sessions: [
           { letter: 'A', title: 'Ecosystem Restoration and Species Conservation', chair: 'RED Laudemir S. Salac', org: 'Haribon Foundation for the Conservation of Natural Resources, Inc.', venue: 'Satin 2', time:'1:30 - 5:00 PM DAY 1', topics: ['Species conservation programs', 'Combating Invasive Alien Species', 'Lessons from ASEAN restoration initiatives', 'Knowledge capture, storage, and sharing mechanisms in protected areas'] },
           { letter: 'B', title: 'Climate Resilience and Nature-Based Solutions (NbS)', chair: 'Dr. Mundita S. Lim', org: 'NbS Support Net (PCP4NBS)', venue: 'Quezon 1', time:'1:30 - 5:00 PM DAY 1', topics: ['Biodiversity and Climate Nexus', 'Nature-Based Solutions', 'NbS for Climate Resilience', 'Support for Mainstreaming, Financing, and Institutionalization of NbS'] },
           { letter: 'C', title: 'Ecological Connectivity', chair: 'RED Felix S. Mirasol', org: 'Biodiversity Corridor Project, UNDP', venue: 'Quezon 2 & 3', time:'1:30 - 5:00 PM DAY 1', topics: ['Biodiversity corridors and ecological networks', 'Landscape and Seascape Conservation Approaches', 'Other Effective Areas-based Conservation Measures initiatives'] }
         ] },
-      { n: '2', color: '#F08424', onDark: '#F9A03F', badgeText: '#12233F', bg: 'assets/parks/MT_KATINGLAD.webp', title: 'AHP as a Prosperity Corridor',
+      { n: '2', color: '#F08424', onDark: '#F9A03F', badgeText: '#12233F', bg: 'assets/parks/MT_KATINGLAD.webp', title: 'AHP as a Prosperity Corridor', link: 'https://drive.google.com/drive/folders/1KcruJR0p982zOq6de0xxarrC6H6CgpRe',
         text: 'Mainstream biodiversity by leveraging AHPs as critical natural capital and drivers of the blue economy, and fostering partnerships with the private sector and securing investments for PAs safeguarding resources upon which businesses and key economic sectors depend.',
         sessions: [
           { letter: 'A', title: 'Sustainable Tourism and Green Growth', chair: 'AHP Committee — Thailand', org: 'DENR-BMB', venue: 'Satin 2', time:'9:00 - 12:00 PM DAY 2', topics: ['Ecotourism models and standards', 'Managing tourism impacts and carrying capacity', 'Community-based tourism enterprises', 'Sustainable Agricultural Practices'] },
           { letter: 'B', title: 'Natural Capital Accounting and Blue Economy', chair: 'ASec. Noralene M. Uy', org: 'REECS and BMB Coastal and Marine Division', venue: 'Quezon 1', time:'9:00 - 12:00 PM DAY 2', topics: ['Blue Economy and Philippine Ecosystem and Natural Capital Accounting System (PENCAS)', 'Marine Spatial Planning', 'Blue economy opportunities in AHPs (fisheries, mangroves, ecotourism)'] },
           { letter: 'C', title: 'Sustainable Financing and Private Sector Engagement', chair: 'Dir. Al O. Orolfo', org: 'Conservation International Philippines, AGCF and BIOFIN', venue: 'Quezon 2 & 3', time:'9:00 - 12:00 PM DAY 2', topics: ['Innovative financing (e.g., trust funds, PES, carbon financing)', 'Private sector partnerships and investments', 'Financing mechanisms for long-term PA sustainability'] }
         ] },
-      { n: '3', color: '#003CA8', onDark: '#30CCFC', badgeText: '#12233F', bg: 'assets/parks/MT_APO.webp', title: 'AHP for People Empowerment',
+      { n: '3', color: '#003CA8', onDark: '#30CCFC', badgeText: '#12233F', bg: 'assets/parks/MT_APO.webp', title: 'AHP for People Empowerment', link: 'https://drive.google.com/drive/folders/1-CA-AlDVYdX4dhdcQJ3BNj8pYZpNjlu4',
         text: 'Promote inclusive governance structures by integrating traditional knowledge, fostering sustainable livelihoods and Biodiversity-Friendly Enterprises, and ensuring the active leadership of Women, Youth, Indigenous Peoples and Local Communities in PA and AHP management.',
         sessions: [
           { letter: 'A', title: 'Governance, Policy, and Law Enforcement', chair: 'RED Henry A. Adornado, PhD.', org: 'Forest Foundation Philippines', venue: 'Marino', time:'1:30 - 5:00 PM DAY 2', topics: ['The role of science, tradition and policy in strengthening PA governance frameworks', 'Transformation of institutional and community mindsets towards inclusive AHP governance', 'Advocacy and public engagement to amplify AHP conservation'] },
@@ -591,8 +594,8 @@ class Component extends DCLogic {
           { time: '7:30–9:00 AM', text: 'Registration and Arrival of Guests; Opening Ceremony', note: '' },
           { time: '9:00–9:15 AM', text: 'Philippine National Anthem and ASEAN Hymn', note: '' },
           { time: '9:15–9:25 AM', text: 'Welcome Remarks', note: 'Hon. Maria Josefina Belmonte, Local Chief Executive, Quezon City' },
-          { time: '9:25–10:00 AM', text: 'Opening Messages and Introduction of Keynote Speaker', note: 'Dr. Jerome Montemayor, Executive Director, ACB · DSG San Lwin, Deputy Secretary-General for ASEAN Socio-Cultural Community (recorded video message) · Hon. Dita Angara-Mathay, Secretary, Department of Tourism' },
-          { time: '10:00–10:20 AM', text: 'Keynote Message', note: 'Hon. Juan Miguel T. Cuna, Secretary, DENR' },
+          { time: '9:25–10:00 AM', text: 'Opening Messages and Introduction of Keynote Speaker', note: 'Dr. Jerome Montemayor, Executive Director, ACB · DSG San Lwin, Deputy Secretary-General for ASEAN Socio-Cultural Community · Hon. Juan Miguel T. Cuna, Secretary, DENR' },
+          { time: '10:00–10:20 AM', text: 'Keynote Message', note: 'Hon. Dita Angara-Mathay, Secretary, Department of Tourism' },
           { time: '10:20–10:25 AM', text: 'Photo Opportunity', note: '' },
           { time: '10:25–10:40 AM', text: 'Cultural Presentation', note: '' },
           { time: '10:40–11:00 AM', text: 'Setting the Tone — Forum Rationale and Objectives; Introduction of Forum Streams', note: 'Atty. Felix S. Alicer, Assistant Secretary for Field Operations–Mindanao and concurrent Director, BMB' },
@@ -635,21 +638,21 @@ class Component extends DCLogic {
     }));
 
     const parks = [
-      { name: 'Agusan Marsh Wildlife Sanctuary', photo: 'assets/parks/AGUSAN_MARSH.webp' },
-      { name: 'Apo Reef Natural Park', photo: 'assets/parks/APO_REEF.webp' },
-      { name: 'Balinsasayao Twin Lakes Natural Park', photo: 'assets/parks/BALINSASAYAO.webp' },
-      { name: 'Mt. Apo Natural Park', photo: 'assets/parks/MT_APO.webp' },
-      { name: 'Mt. Hamiguitan Range Wildlife Sanctuary', photo: 'assets/parks/MT_HAMIGUITAN.webp' },
-      { name: 'Mt. Iglit-Baco Natural Park', photo: 'assets/parks/MT_IGLIT.webp' },
-      { name: 'Mt. Inayawan Range Natural Park', photo: 'assets/parks/MT_INAYAWAN.webp' },
-      { name: 'Mt. Kitanglad Range Natural Park', photo: 'assets/parks/MT_KATINGLAD.webp' },
-      { name: 'Mt. Makiling Forest Reserve', photo: 'assets/parks/MT_MAKILING.webp' },
-      { name: 'Mt. Malindang Range Natural Park', photo: 'assets/parks/MT_MALINDANG.webp' },
-      { name: 'Mts. Timpoong Hibok-hibok Natural Monument', photo: 'assets/parks/MT_TIMPOONG.webp' },
-      { name: 'Pasonanca Natural Park', photo: 'assets/parks/PASONANCA.webp' },
-      { name: 'Tubbataha Reefs Natural Park', photo: 'assets/parks/TUBBATAHA.webp' },
-      { name: 'Turtle Islands Wildlife Sanctuary', photo: 'assets/parks/TURTLE_ISLAND.webp' }
-    ].map(p => ({ ...p, nameColor: '#12233F' }));
+      { name: 'Agusan Marsh Wildlife Sanctuary', photo: 'assets/parks/AGUSAN_MARSH.webp', link: 'https://ahpforum.my.canva.site/agusan-marsh-wildlife-sanctuary' },
+      { name: 'Apo Reef Natural Park', photo: 'assets/parks/APO_REEF.webp', link: 'https://ahpforum.my.canva.site/apo-reef-natural-park' },
+      { name: 'Balinsasayao Twin Lakes Natural Park', photo: 'assets/parks/BALINSASAYAO.webp', link: 'https://ahpforum.my.canva.site/balinsasayao-twin-lakes-natural-park' },
+      { name: 'Mt. Apo Natural Park', photo: 'assets/parks/MT_APO.webp', link: 'https://ahpforum.my.canva.site/mt-apo-natural-park' },
+      { name: 'Mt. Hamiguitan Range Wildlife Sanctuary', photo: 'assets/parks/MT_HAMIGUITAN.webp', link: 'https://ahpforum.my.canva.site/mt-hamiguitan-range-wildlife-sanctuary' },
+      { name: 'Mt. Iglit-Baco Natural Park', photo: 'assets/parks/MT_IGLIT.webp', link: 'https://ahpforum.my.canva.site/mts-iglit-baco-natural-park' },
+      { name: 'Mt. Inayawan Range Natural Park', photo: 'assets/parks/MT_INAYAWAN.webp', link: 'https://ahpforum.my.canva.site/mt-inayawan-range-natural-park' },
+      { name: 'Mt. Kitanglad Range Natural Park', photo: 'assets/parks/MT_KATINGLAD.webp', link: 'https://ahpforum.my.canva.site/mt-kitanglad-range-natural-park' },
+      { name: 'Mt. Makiling Forest Reserve', photo: 'assets/parks/MT_MAKILING.webp', link: 'https://ahpforum.my.canva.site/mt-makiling-forest-reserve' },
+      { name: 'Mt. Malindang Range Natural Park', photo: 'assets/parks/MT_MALINDANG.webp', link: 'https://ahpforum.my.canva.site/mt-malindang-range-natural-park' },
+      { name: 'Mts. Timpoong Hibok-hibok Natural Monument', photo: 'assets/parks/MT_TIMPOONG.webp', link: 'https://ahpforum.my.canva.site/mts-timpoong-hibokhibok-natural-monument' },
+      { name: 'Pasonanca Natural Park', photo: 'assets/parks/PASONANCA.webp', link: 'https://ahpforum.my.canva.site/pasonanca-natural-park' },
+      { name: 'Tubbataha Reefs Natural Park', photo: 'assets/parks/TUBBATAHA.webp', link: 'https://ahpforum.my.canva.site/tubbataha-reef-natural-park' },
+      { name: 'Turtle Islands Wildlife Sanctuary', photo: 'assets/parks/TURTLE_ISLAND.webp', link: 'https://ahpforum.my.canva.site/turtle-islands-wildlife-sanctuary' }
+    ].map(p => ({ link: '#', ...p, nameColor: '#12233F' }));
 
     return {
       device: d, menuOpen: this.state.menuOpen,
