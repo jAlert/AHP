@@ -299,8 +299,9 @@
                   </div>
                 </sc-for>
               </div>
-              <div style="padding: {{ cardPad }}; background: #0E1E36; borderTop: 1px solid #2B4066">
-                <a href="{{ s.link }}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; alignItems: center; gap: 8px; fontSize: 12px; fontWeight: 800; letterSpacing: .07em; textTransform: uppercase; color: {{ s.onDark }}; textDecoration: none" style-hover="opacity: .8">View Stream {{ s.n }} details<span style="fontSize: 14px">→</span></a>
+              <div style="display: flex; flexWrap: wrap; alignItems: center; justifyContent: space-between; gap: 14px; padding: {{ cardPad }}; background: #0E1E36; borderTop: 1px solid #2B4066">
+                <span style="fontSize: 12px; lineHeight: 1.5; color: #7E93B4">Full speakers, abstracts and schedule for this stream.</span>
+                <a href="{{ s.link }}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; alignItems: center; gap: 10px; padding: 13px 22px; borderRadius: 999px; background: {{ s.onDark }}; color: {{ s.badgeText }}; fontSize: 12px; fontWeight: 800; letterSpacing: .07em; textTransform: uppercase; textDecoration: none; boxShadow: 0 8px 22px rgba(0,0,0,.28); transition: transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s ease" style-hover="transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,.4)">View Stream {{ s.n }} details<span style="display: inline-flex; fontSize: 15px">→</span></a>
               </div>
             </sc-if>
           </div>
