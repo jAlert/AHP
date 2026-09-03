@@ -342,6 +342,8 @@
                       <div style="fontSize: 12px; lineHeight: 1.5; color: #7A8AA3; marginTop: 4px">{{ it.note }}</div>
                       <div style="fontSize: 12px; lineHeight: 1.5; color: #7A8AA3; marginTop: 4px">{{ it.note2 }}</div>
                       <div style="fontSize: 12px; lineHeight: 1.5; color: #7A8AA3; marginTop: 4px">{{ it.note3 }}</div>
+                      <div style="padding-top: {{ gap12 }}; fontSize: {{ smallSize }}; lineHeight: 1.5; fontWeight: 600; color: #12233F">{{ it.text2 }}</div>
+                      <div style="fontSize: 12px; lineHeight: 1.5; color: #7A8AA3; marginTop: 4px">{{ it.note4 }}</div>
                     </div>
                   </div>
                 </sc-for>
@@ -359,7 +361,7 @@
         <span style="width: 28px; height: 3px; background: #E42424"></span>
         <span style="fontSize: 11px; fontWeight: 800; letterSpacing: .14em; textTransform: uppercase; color: #E42424">Launches and signings</span>
       </div>
-      <h2 data-reveal="1" style="margin: 0 0 {{ gap48 }}; maxWidth: 24ch; fontSize: {{ secSize }}; lineHeight: 1.08; fontWeight: 800; letterSpacing: -.025em; color: #12233F; textWrap: balance">Six milestones marked at the Forum</h2>
+      <h2 data-reveal="1" style="margin: 0 0 {{ gap48 }}; maxWidth: 24ch; fontSize: {{ secSize }}; lineHeight: 1.08; fontWeight: 800; letterSpacing: -.025em; color: #12233F; textWrap: balance">Five milestones marked at the Forum</h2>
       <div style="display: grid; gridTemplateColumns: {{ cols2 }}; gap: {{ gap16 }}">
         <sc-for list="{{ launches }}" as="l" hint-placeholder-count="6">
           <div data-reveal="1" style="display: flex; gap: {{ gap20 }}; padding: {{ cardPad }}; background: #FFFFFF; border: 1px solid #E4E8EF; borderRadius: 12px; transition: transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease" style-hover="transform: translateY(-3px); box-shadow: 0 12px 30px rgba(18,35,63,.08)">
@@ -564,22 +566,22 @@ class Component extends DCLogic {
         text: 'Demonstrate how AHPs and Nature-based Solutions (NbS) contribute to climate and food security, addressing the threats posed by the triple planetary crisis of biodiversity loss, climate change, and pollution. Highlight the essential role of biodiversity corridors and transboundary conservation initiatives in maintaining ecological connectivity.',
         sessions: [
           { letter: 'A', title: 'Ecosystem Restoration and Species Conservation', chair: 'RED Laudemir S. Salac', org: 'Haribon Foundation for the Conservation of Natural Resources, Inc.', venue: 'Satin 2', time:'1:30 - 5:00 PM DAY 1', topics: ['Species conservation programs', 'Combating Invasive Alien Species', 'Lessons from ASEAN restoration initiatives', 'Knowledge capture, storage, and sharing mechanisms in protected areas'] },
-          { letter: 'B', title: 'Climate Resilience and Nature-Based Solutions (NbS)', chair: 'Dr. Mundita S. Lim', org: 'NbS Support Net (PCP4NBS)', venue: 'Quezon 1', time:'1:30 - 5:00 PM DAY 1', topics: ['Biodiversity and Climate Nexus', 'Nature-Based Solutions', 'NbS for Climate Resilience', 'Support for Mainstreaming, Financing, and Institutionalization of NbS'] },
-          { letter: 'C', title: 'Ecological Connectivity', chair: 'RED Felix S. Mirasol', org: 'Biodiversity Corridor Project, UNDP', venue: 'Quezon 2 & 3', time:'1:30 - 5:00 PM DAY 1', topics: ['Biodiversity corridors and ecological networks', 'Landscape and Seascape Conservation Approaches', 'Other Effective Areas-based Conservation Measures initiatives'] }
+          { letter: 'B', title: 'Climate Resilience and Nature-Based Solutions (NbS)', chair: 'Dr. Mundita S. Lim', org: 'NbS Support Net (PCP4NBS)', venue: 'Quezon 2 & 3', time:'1:30 - 5:00 PM DAY 1', topics: ['Biodiversity and Climate Nexus', 'Nature-Based Solutions', 'NbS for Climate Resilience', 'Support for Mainstreaming, Financing, and Institutionalization of NbS'] },
+          { letter: 'C', title: 'Ecological Connectivity', chair: 'RED Felix S. Mirasol', org: 'Biodiversity Corridor Project, DENR-UNDP', venue: 'Quezon 1', time:'1:30 - 5:00 PM DAY 1', topics: ['Biodiversity corridors and ecological networks', 'Landscape and Seascape Conservation Approaches', 'Other Effective Areas-based Conservation Measures initiatives'] }
         ] },
       { n: '2', color: '#F08424', onDark: '#F9A03F', badgeText: '#12233F', bg: 'assets/parks/MT_KATINGLAD.webp', title: 'AHP as a Prosperity Corridor', link: 'https://drive.google.com/drive/folders/1KcruJR0p982zOq6de0xxarrC6H6CgpRe',
         text: 'Mainstream biodiversity by leveraging AHPs as critical natural capital and drivers of the blue economy, and fostering partnerships with the private sector and securing investments for PAs safeguarding resources upon which businesses and key economic sectors depend.',
         sessions: [
           { letter: 'A', title: 'Sustainable Tourism and Green Growth', chair: 'AHP Committee — Thailand', org: 'DENR-BMB', venue: 'Satin 2', time:'9:00 - 12:00 PM DAY 2', topics: ['Ecotourism models and standards', 'Managing tourism impacts and carrying capacity', 'Community-based tourism enterprises', 'Sustainable Agricultural Practices'] },
-          { letter: 'B', title: 'Natural Capital Accounting and Blue Economy', chair: 'ASec. Noralene M. Uy', org: 'REECS and BMB Coastal and Marine Division', venue: 'Quezon 1', time:'9:00 - 12:00 PM DAY 2', topics: ['Blue Economy and Philippine Ecosystem and Natural Capital Accounting System (PENCAS)', 'Marine Spatial Planning', 'Blue economy opportunities in AHPs (fisheries, mangroves, ecotourism)'] },
-          { letter: 'C', title: 'Sustainable Financing and Private Sector Engagement', chair: 'Dir. Al O. Orolfo', org: 'Conservation International Philippines, AGCF and BIOFIN', venue: 'Quezon 2 & 3', time:'9:00 - 12:00 PM DAY 2', topics: ['Innovative financing (e.g., trust funds, PES, carbon financing)', 'Private sector partnerships and investments', 'Financing mechanisms for long-term PA sustainability'] }
+          { letter: 'B', title: 'Natural Capital Accounting and Blue Economy', chair: 'ASec. Noralene M. Uy', org: 'The Resources, Environment, and Economics Center for Studies, Inc. (REECS) and DENR-BMB', venue: 'Quezon 1', time:'9:00 - 12:00 PM DAY 2', topics: ['Blue Economy and Philippine Ecosystem and Natural Capital Accounting System (PENCAS)', 'Marine Spatial Planning', 'Blue economy opportunities in AHPs (fisheries, mangroves, ecotourism)'] },
+          { letter: 'C', title: 'Sustainable Financing and Private Sector Engagement', chair: 'Dir. Al O. Orolfo', org: 'Conservation International Philippines, Accelerating Green and Climate Finance (AGCF) and The Biodiversity Finance Initiative (BIOFIN), UNDP', venue: 'Quezon 2 & 3', time:'9:00 - 12:00 PM DAY 2', topics: ['Innovative financing (e.g., trust funds, PES, carbon financing)', 'Private sector partnerships and investments', 'Financing mechanisms for long-term PA sustainability'] }
         ] },
       { n: '3', color: '#003CA8', onDark: '#30CCFC', badgeText: '#12233F', bg: 'assets/parks/MT_APO.webp', title: 'AHP for People Empowerment', link: 'https://drive.google.com/drive/folders/1-CA-AlDVYdX4dhdcQJ3BNj8pYZpNjlu4',
         text: 'Promote inclusive governance structures by integrating traditional knowledge, fostering sustainable livelihoods and Biodiversity-Friendly Enterprises, and ensuring the active leadership of Women, Youth, Indigenous Peoples and Local Communities in PA and AHP management.',
         sessions: [
-          { letter: 'A', title: 'Governance, Policy, and Law Enforcement', chair: 'RED Henry A. Adornado, PhD.', org: 'Forest Foundation Philippines', venue: 'Marino', time:'1:30 - 5:00 PM DAY 2', topics: ['The role of science, tradition and policy in strengthening PA governance frameworks', 'Transformation of institutional and community mindsets towards inclusive AHP governance', 'Advocacy and public engagement to amplify AHP conservation'] },
-          { letter: 'B', title: 'Community Engagement and Indigenous Knowledge', chair: 'RED Atty. Ma. Mercedes V. Dumagan', org: 'Wildlife Conservation Society Philippines and NTFP-EP', venue: 'Satin 2', time:'1:30 - 5:00 PM DAY 2', topics: ['Indigenous Peoples\' roles in conservation', 'Traditional ecological knowledge systems', 'Co-management and community-led initiatives'] },
-          { letter: 'C', title: 'Inclusive Participation and Capacity Development', chair: 'NParks Singapore', org: 'Hanns Seidel Foundation in ASEAN, Global Youth Biodiversity Network and ASEAN Youth Biodiversity Programme (ACB)', venue: 'Quezon Ballroom', time:'1:30 - 5:00 PM DAY 2', topics: ['Engagement of women and youth in conservation', 'Enhanced stakeholders engagement thru citizen science'] }
+          { letter: 'A', title: 'Governance, Policy, and Law Enforcement', chair: 'RED Henry A. Adornado, PhD.', org: 'Forest Foundation Philippines', venue: 'Quezon Ballroom', time:'1:30 - 5:00 PM DAY 2', topics: ['The role of science, tradition and policy in strengthening PA governance frameworks', 'Transformation of institutional and community mindsets towards inclusive AHP governance', 'Advocacy and public engagement to amplify AHP conservation'] },
+          { letter: 'B', title: 'Community Engagement and Indigenous Knowledge', chair: 'RED Atty. Ma. Mercedes V. Dumagan', org: 'Wildlife Conservation Society Philippines and Non-Timber Forest Products Exchange Programme (NTFP-EP)', venue: 'Satin 2', time:'1:30 - 5:00 PM DAY 2', topics: ['Indigenous Peoples\' roles in conservation', 'Traditional ecological knowledge systems', 'Co-management and community-led initiatives'] },
+          { letter: 'C', title: 'Inclusive Participation and Capacity Development', chair: 'NParks Singapore', org: 'Hanns Seidel Foundation in ASEAN, Global Youth Biodiversity Network and ASEAN Youth Biodiversity Programme (ACB)', venue: 'Merino', time:'1:30 - 5:00 PM DAY 2', topics: ['Engagement of women and youth in conservation', 'Enhanced stakeholders engagement thru citizen science'] }
         ] }
     ];
 
@@ -594,25 +596,26 @@ class Component extends DCLogic {
     const DAYS = [
       { n: 'Day 1', date: '8 Sept', title: 'Opening Ceremony and Stream 1', summary: 'Opening ceremony, exhibits, Stream 1 breakouts, welcome dinner and launches',
         items: [
-          { time: '7:30–9:00 AM', text: 'Registration and Arrival of Guests; Opening Ceremony', note: '' },
-          { time: '9:00–9:15 AM', text: 'Philippine National Anthem and ASEAN Hymn', note: '' },
-          { time: '9:15–9:25 AM', text: 'Welcome Remarks', note: 'Hon. Maria Josefina Belmonte, Local Chief Executive, Quezon City' },
-          { time: '9:25–10:00 AM', text: 'Opening Messages and Introduction of Keynote Speaker', note: 'Dr. Jerome Montemayor, Executive Director, ACB', note2: 'DSG San Lwin, Deputy Secretary-General for ASEAN Socio-Cultural Community', note3: 'Hon. Juan Miguel T. Cuna, Secretary, DENR' },
-          { time: '10:00–10:20 AM', text: 'Keynote Message', note: 'Hon. Dita Angara-Mathay, Secretary, Department of Tourism' },
-          { time: '10:20–10:25 AM', text: 'Photo Opportunity', note: '' },
-          { time: '10:25–10:40 AM', text: 'Cultural Presentation', note: '' },
-          { time: '10:40–11:00 AM', text: 'Setting the Tone — Forum Rationale and Objectives; Introduction of Forum Streams', note: 'Atty. Felix S. Alicer, Assistant Secretary for Field Operations–Mindanao and concurrent Director, BMB' },
-          { time: '11:00–11:15 AM', text: 'Opening of the Exhibits', note: 'Lobby / Exhibit Area' },
-          { time: '11:30–12:00 NN', text: 'Press Conference; Exhibits Viewing and Networking', note: '' },
+          { time: '7:30–9:00 AM', text: 'Registration and Arrival of Guests', note: '' },
+          { time: '9:00–9:05 AM', text: 'Philippine National Anthem and ASEAN Hymn', note: '' },
+          { time: '9:05–9:20 AM', text: 'Welcome Remarks', note: 'Hon. Maria Josefina Belmonte, Local Chief Executive, Quezon City' },
+          { time: '9:20–9:50 AM', text: 'Message from the ASEAN Centre for Biodiversity and Introduction to the AHP Regional Action Plan', text2: 'Message from the ASEAN Secretariat', note: 'Dr. Jerome Montemayor, Executive Director, ASEAN Centre for Biodiversity', note4: 'DSG San Lwin, Deputy Secretary-General for ASEAN Socio-Cultural Community' },
+          { time: '9:50–10:00 AM', text: 'Introduction of Keynote Speakers', note: 'Atty. Ernesto D. Adobo, Jr., Undersecretary for Legal, Organizational Transformation and Human Resources, DENR' },
+          { time: '10:00–10:40 AM', text: 'Keynote Address', note: 'Hon. Maria Bernadita Angara-Mathay, Secretary, Department of Tourism', note2: 'Hon. Juan Miguel T. Cuna, Secretary, Department of Environment and Natural Resources' },
+          { time: '10:40–10:45 AM', text: 'Photo Opportunity', note: '' },
+          { time: '10:45–10:55 AM', text: 'Special Performance', note: '' },
+          { time: '10:55–11:10 AM', text: 'Setting the Tone — Forum Rationale and Objectives; Introduction of Forum Streams', note: 'Atty. Felix S. Alicer, Assistant Secretary for Field Operations–Mindanao and concurrent Director, BMB' },
+          { time: '11:10–11:30 AM', text: 'Opening of the Exhibits', note: 'Lobby / Exhibit Area' },
+          { time: '11:30–12:00 NN', text: 'Press Conference', text2: 'Exhibits Viewing and Networking', note: '' },
           { time: '12:00–1:00 PM', text: 'Lunch Break', note: '' },
           { time: '1:00–1:30 PM', text: 'Exhibits Viewing and Networking', note: '' },
           { time: '1:30–5:00 PM', text: 'Stream 1 — AHP as an Anchor for Resilience', note: 'Breakout Sessions A, B and C run in parallel' },
           { time: '6:30–6:40 PM', text: 'Welcome Dinner — Welcome Remarks', note: 'Atty. Jonas R. Leones, Undersecretary for Policy, Planning and International Affairs' },
           { time: '6:40–7:00 PM', text: 'Launch of the AHP Regional Action Plan', note: 'Mr. Amiel D. Sarne, Director, Biodiversity Conservation Division, ACB' },
-          { time: '7:00–7:20 PM', text: 'Launch of the Philippine AHP Network (PAN)', note: 'Atty. Felix S. Alicer, BMB Director', note2: 'Dr. Jerome Montemayor, Executive Director, ACB' },
+          { time: '7:00–7:20 PM', text: 'Launch of the Philippine AHP Network (PAN)', note: 'Atty. Felix S. Alicer, OIC Assistant Secretary–Mindanao, BMB Director', note2: 'Dr. Jerome Montemayor, Executive Director, ACB' },
           { time: '7:20–7:35 PM', text: 'Launch of the Philippines Biodiversity Financing Project under the GBFF', note: 'DENR Officials', note2: 'Mr. Christophe Bahuet, UNDP Resident Representative in the Philippines' },
-          { time: '7:35–7:45 PM', text: 'Closing Message', note: 'Atty. Analiza Rebuelta-Teh, CESO I, Undersecretary for Finance, Information Systems, Climate Change and Administration' },
-          { time: '7:45–9:00 PM', text: 'Cultural Presentation of Animatiera; Fellowship Dinner', note: '' }
+          { time: '7:35–7:45 PM', text: 'Closing Message', note: 'Atty. Ignatius Loyola A. Rodriguez, Undersecretary for Special Concerns and Legislative Affairs, DENR' },
+          { time: '7:45–9:00 PM', text: 'Special Performance of Animatiera', text2: 'Fellowship Dinner', note: '' }
         ] },
       { n: 'Day 2', date: '9 Sept', title: 'Streams 2 and 3', summary: 'Six breakout sessions, exhibits, SGP III Launch and AGI Recognition dinner',
         items: [
@@ -628,7 +631,7 @@ class Component extends DCLogic {
           { time: '8:30–12:00 NN', text: 'Side Events', note: 'Ecosystem Restoration Session', note2: 'Workshop on the AHP Programme Operations Manual', note3: 'Youth Empowerment Co-design Lab' },
           { time: '12:00–1:00 PM', text: 'Lunch Break', note: '' },
           { time: '1:30–2:15 PM', text: 'AHP Forum Synthesis', note: 'Mariglo Rosaida I. Laririt, Assistant Director, BMB' },
-          { time: '2:15–4:00 PM', text: 'Closing Ceremony — Expression of Gratitude and Closing Remarks', note: 'ACB · Atty. Felix S. Alicer, BMB Director', note2: 'Atty. Ernesto D. Adobo Jr., Undersecretary for Legal, Organizational Transformation and Human Resources, DENR' },
+          { time: '2:15–4:00 PM', text: 'Closing Ceremony — Expression of Gratitude and Closing Remarks', note: 'ACB', note2: ' Atty. Felix S. Alicer, BMB Director', note3: 'Atty. Ernesto D. Adobo Jr., Undersecretary for Legal, Organizational Transformation and Human Resources, DENR' },
           { time: '6:00–9:00 PM', text: 'Closing Dinner — Living Narratives', note: 'GYBN SEA and Philippines' }
         ] }
     ];
@@ -733,8 +736,7 @@ class Component extends DCLogic {
         { num: '02', title: 'Launch of the AHP Regional Action Plan', text: 'Official launch of the AHP Regional Action Plan, which provides standardised guidelines, procedures, and best practices for the designation, management, and monitoring of AHPs, outlining strategic priorities, collaborative activities, and measurable targets for the Programme across the region.' },
         { num: '03', title: 'Launch of Small Grants Programme III', text: 'Balinsasayao Twin Lakes Natural Park, a recent Philippine AHP, is one of the sites in the ASEAN for the implementation of SGP III. The Programme is administered by the ACB alongside third-party implementers, including the German Development Bank, Kreditanstalt für Wiederaufbau (KfW).' },
         { num: '04', title: 'Launch of the Philippine AHP Network', text: 'The Philippine ASEAN Heritage Parks Network will strengthen collaboration among Philippine AHPs by providing a national platform for coordination, knowledge exchange, peer learning, and collaborative action, and support protected areas pursuing ASEAN Heritage Park designation.' },
-        { num: '05', title: 'Ceremonial Signing of the MOPA Joint Endorsement', text: 'The Month of the Protected Areas builds on the momentum of the 2026 Year of the Protected Areas campaign. Led by the DENR with the DILG and the DOT, the ceremonial signing exemplifies the shared commitment of the three agencies.' },
-        { num: '06', title: 'Launch of the Biodiversity Finance Project under the GBFF', text: 'The DENR BMB and UNDP initiated Phase II of the BIOFIN Project to build capacity and support various finance solutions. The Philippines Biodiversity Financing Program was approved by the GEF under the first programming tranche of the Global Biodiversity Framework Fund, for implementation from July 2026 to July 2032.' }
+        { num: '05', title: 'Launch of the Biodiversity Finance Project under the GBFF', text: 'The DENR BMB and UNDP initiated Phase II of the BIOFIN Project to build capacity and support various finance solutions. The Philippines Biodiversity Financing Program was approved by the GEF under the first programming tranche of the Global Biodiversity Framework Fund, for implementation from July 2026 to July 2032.' }
       ],
       sideEvents: [
         { time: 'Day 3 · Morning', color: '#E42424', title: 'Ecosystem Restoration in the ASEAN', text: 'Presents the ecosystem restoration efforts of the ACB in the region, highlighting various restoration efforts including the AHP Programme and its outcomes in the Philippines and the region.' },
